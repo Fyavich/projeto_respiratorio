@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intranet</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    
+    <div class="main-container">
+
+        <!-- Sidebar -->
+        <!-- #region -->
+        <div class="sidebar">
+            <form>
+                <ul>
+                    <li><label for="homeInter" class="hidden-radio">
+                        <input type="radio" name="option" id="homeInter" value="1" checked onchange="changeInterface(this)">
+                        Home</label></li>
+                    <li><label for="calculoSupInter" class="hidden-radio">
+                        <input type="radio" name="option" id="calculoSupInter" value="2" onchange="changeInterface(this)">
+                        Calculo Suporte</label></li>
+                    <li><label for="romaneioInter" class="hidden-radio">
+                        <input type="radio" name="option" id="romaneioInter" value="3" onchange="changeInterface(this)">
+                        Romaneio</label></li>
+                    <li><label for="segregacaoInter" class="hidden-radio">
+                        <input type="radio" name="option" id="segregacaoInter" value="4" onchange="changeInterface(this)">
+                        Segregação</label></li>
+                    <li><label for="diretrizesInter" class="hidden-radio">
+                        <input type="radio" name="option" id="diretrizesInter" value="5" onchange="changeInterface(this)">
+                        Diretrizes</label></li>
+                    <li><label for="rotaInter" class="hidden-radio">
+                        <input type="radio" name="option" id="rotaInter" value="6" onchange="changeInterface(this)">
+                        Rota</label></li>
+                </ul>
+            </form>            
+        </div>
+        <!-- #endregion -->
+
+        <div class="main-content">
+            
+            <!-- Home -->
+
+            <!-- Calculo Suporte -->
+            <!-- #region -->
+            <div class="calculo-suporte hidden" id="calculo-suporte">
+                <div id="formula"></div>
+                <div id="calculo">
+                    <h1>Calculo de Suporte de Cilindro</h1>
+                    <label for="qtdCilindros8">Cilindros 8m³</label>
+                        <input type="number" id="qtdCilindros8">
+                        <input type="number" id="qtdCilindros8">
+                        <input type="number" id="qtdCilindros8">
+                        <input type="number" id="qtdCilindros8">
+                        <input type="number" id="qtdCilindros8">
+                        <input type="number" id="qtdCilindros8">
+                        <input type="number" id="qtdCilindros8">
+                        <input type="number" id="qtdCilindros8">
+                        <input type="number" id="qtdCilindros8">
+                        <input type="number" id="qtdCilindros8">
+                        <br>
+                    <label for="qtdCilindros4">Cilindros 4m³</label>
+                        <input type="number" id="qtdCilindros4">
+                        <input type="number" id="qtdCilindros4">
+                        <input type="number" id="qtdCilindros4">
+                        <input type="number" id="qtdCilindros4">
+                        <input type="number" id="qtdCilindros4">
+                        <input type="number" id="qtdCilindros4">
+                        <input type="number" id="qtdCilindros4">
+                        <input type="number" id="qtdCilindros4">
+                        <input type="number" id="qtdCilindros4">
+                        <input type="number" id="qtdCilindros4">
+                        <br>
+                    <label for="qtdCilindros1">Cilindros 1m³</label>
+                        <input type="number" id="qtdCilindros1">
+                        <input type="number" id="qtdCilindros1">
+                        <input type="number" id="qtdCilindros1">
+                        <input type="number" id="qtdCilindros1">
+                        <input type="number" id="qtdCilindros1">
+                        <input type="number" id="qtdCilindros1">
+                        <input type="number" id="qtdCilindros1">
+                        <input type="number" id="qtdCilindros1">
+                        <input type="number" id="qtdCilindros1">
+                        <input type="number" id="qtdCilindros1">
+                        <br>
+
+                        <label for="litragem">Litragem</label>
+                        <input type="number" name="litragem" id="litragem">
+
+                        <div class="resultado">
+                            <button onclick="calcularSuporte()">Calcular</button>
+                            <br>
+                            <input type="number" id="suporte" readonly>
+                        </div>
+                        
+                </div>
+            </div>
+            <!-- #endregion -->
+            
+            <!-- Romaneio -->
+            <!-- #region -->
+            <div class="romaneio hidden" id="romaneio">
+                <form action="">
+
+                </form>
+            </div>
+            <!-- #endregion -->
+
+
+            <!--  -->
+
+
+            <!--  -->
+
+
+            <!--  -->
+
+
+
+            
+        </div>
+    </div>
+
+    <script src="script/script.js"></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("service_84d7ck8");
+        })();
+    </script>
+</body>
+</html>
