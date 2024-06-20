@@ -142,3 +142,99 @@ function validarCilindro1(litragem){
 //#endregion
 
 /* Envio de Romaneio */
+//#region 
+const filialSelected = document.getElementById('filiais');
+const plantaoSelected = document.getElementById('plantao');
+
+/* Seleção de Filial para Envio de E-mail */
+filialSelected.addEventListener('change', function(selected){
+    switch(filialSelected.value){
+        case 'Guido':
+            document.getElementById('destinatarios').value = 'ranger.finy@gmail.com';
+        break;
+        case 'Rio de Janeiro':
+            document.getElementById('destinatarios').value = 'filial.rj@gmail.com';
+        break;
+    }
+});
+
+/* Seleção de Plantão para Envio de Cópia para Dist */
+plantaoSelected.addEventListener('change', function(changed){
+    if(document.getElementById('plantao').value=='sim'){
+        document.getElementById('cc_email').value = 'ranger.finy@gmail.com';
+        document.getElementById('lb_cc_email').classList.remove('hidden');
+        document.getElementById('cc_email').classList.remove('hidden')
+    }else{
+        document.getElementById('cc_email').value = ' ';
+        document.getElementById('lb_cc_email').classList.add('hidden');
+        document.getElementById('cc_email').classList.add('hidden');
+    }
+});
+
+/* Preparação dos Parâmetros */
+document.getElementById('envio-romaneio').addEventListener('submit', function(event){
+    event.preventDefault();
+
+    var templanteParams = {
+        from_atendente_sehat: document.getElementById('atendente-sehat').value,
+        from_atendente_logistica: document.getElementById('atendente-logistica').value,
+        from_empresa: document.getElementById('empresas').value,
+        from_filial: document.getElementById('filiais').value,
+        from_nome_paciente: document.getElementById('nome-paciente').value,
+        from_plano_atendimento: document.getElementById('plano-atendimento').value,
+        from_data_visita: document.getElementById('data-visita').value,
+        from_hora_entrega: document.getElementById('hora-entrega').value,
+        from_nome_rua: document.getElementById('nome-rua').value,
+        from_numero_casa: document.getElementById('numero-casa').value,
+        from_complemento_casa: document.getElementById('complemento-casa').value,
+        from_bairro: document.getElementById('bairro').value,
+        from_cidade: document.getElementById('cidade').value,
+        from_estado: document.getElementById('estado').value,
+        from_solicitado_por: document.getElementById('solicitado-por').value,
+        from_plantao: document.getElementById('plantao').value,
+        from_destinatarios: document.getElementById('destinatarios').value,
+        from_cc_email: document.getElementById('cc_email').value,
+        from_equipamentos: document.getElementById('equipamentos').value,
+        from_observacoes: document.getElementById('observacoes').value,
+    }
+
+    /* Enviando o E-mail com os dados */
+    var service_ID = 'service_84d7ck8';    // YOUR_SERVICE_ID
+    var template_ID = 'template_6druemx';  // YOUR_TEMPLATE_ID
+
+    /* Validar os Dados Antes de Enviar*/
+    if(validacaoDados(templanteParams)){
+       emailjs.send(service_ID, template_ID, templanteParams)
+        .then(function(response){
+            console.log('SUCCESS', response.status, response.text);
+            alert('E-mail enviado com sucesso!');
+        }, function(error){
+            console.log('FAILED...', error);
+            alert('O envio do e-mail falhou.');
+        });     
+    }else{
+        alert('PREENCHA TODOS OS CAMPOS !');
+    }
+
+});
+
+function validacaoDados(obj){
+
+    function removeProperties(obj, properties) {
+        properties.forEach(property => {
+            if (obj.hasOwnProperty(property)) {
+                delete obj[property];
+            }
+        });
+    }
+
+    removeProperties(obj, ['from_complemento_casa', 'from_cc_email', 'from_observacoes']);
+    
+    if(Object.values(obj).every(value => value !== null && value !== undefined && value !== '')){
+        return true;
+    }else{
+        return false;
+
+    }
+}
+//#endregion

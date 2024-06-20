@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intranet</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script type="text/javascript">
+        var public_Key = 'hWEdEleyaDLpe-mBn'; // YOUR_PUBLIC_KEY
+        document.addEventListener("DOMContentLoaded", function() {
+            emailjs.init(public_Key);
+        });
+    </script>
+</head>
+<body>
+    
+    <div class="main-container">
+
+        <!-- Sidebar -->
+        <!-- #region -->
+        <div class="sidebar">
+            <form>
+                <ul>
+                    <li><label for="homeInter" class="hidden-radio">
+                        <input type="radio" name="option" id="homeInter" value="1" checked onchange="changeInterface(this)">
+                        Home</label></li>
+                    <li><label for="calculoSupInter" class="hidden-radio">
+                        <input type="radio" name="option" id="calculoSupInter" value="2" onchange="changeInterface(this)">
+                        Calculo Suporte</label></li>
+                    <li><label for="romaneioInter" class="hidden-radio">
+                        <input type="radio" name="option" id="romaneioInter" value="3" onchange="changeInterface(this)">
+                        Romaneio</label></li>
+                    <li><label for="segregacaoInter" class="hidden-radio">
+                        <input type="radio" name="option" id="segregacaoInter" value="4" onchange="changeInterface(this)">
+                        Segregação</label></li>
+                    <li><label for="diretrizesInter" class="hidden-radio">
+                        <input type="radio" name="option" id="diretrizesInter" value="5" onchange="changeInterface(this)">
+                        Diretrizes</label></li>
+                    <li><label for="rotaInter" class="hidden-radio">
+                        <input type="radio" name="option" id="rotaInter" value="6" onchange="changeInterface(this)">
+                        Rota</label></li>
+                </ul>
+            </form>            
+        </div>
+        <!-- #endregion -->
+
+        <div class="main-content">
+            
+            <!-- Home -->
+
+            <!-- Calculo Suporte -->
+            <!-- #region -->
+            <div class="calculo-suporte hidden" id="calculo-suporte">
+                <div id="formula"></div>
+                <div id="calculo">
+                    <h1>Calculo de Suporte de Cilindro</h1>
+                    <label for="qtdCilindros8">Cilindros 8m³</label>
+                        <input type="number" id="qtdCilindros8">
+                        <input type="number" id="qtdCilindros8">
+                        <input type="number" id="qtdCilindros8">
+                        <input type="number" id="qtdCilindros8">
+                        <input type="number" id="qtdCilindros8">
+                        <input type="number" id="qtdCilindros8">
+                        <input type="number" id="qtdCilindros8">
+                        <input type="number" id="qtdCilindros8">
+                        <input type="number" id="qtdCilindros8">
+                        <input type="number" id="qtdCilindros8">
+                        <br>
+                    <label for="qtdCilindros4">Cilindros 4m³</label>
+                        <input type="number" id="qtdCilindros4">
+                        <input type="number" id="qtdCilindros4">
+                        <input type="number" id="qtdCilindros4">
+                        <input type="number" id="qtdCilindros4">
+                        <input type="number" id="qtdCilindros4">
+                        <input type="number" id="qtdCilindros4">
+                        <input type="number" id="qtdCilindros4">
+                        <input type="number" id="qtdCilindros4">
+                        <input type="number" id="qtdCilindros4">
+                        <input type="number" id="qtdCilindros4">
+                        <br>
+                    <label for="qtdCilindros1">Cilindros 1m³</label>
+                        <input type="number" id="qtdCilindros1">
+                        <input type="number" id="qtdCilindros1">
+                        <input type="number" id="qtdCilindros1">
+                        <input type="number" id="qtdCilindros1">
+                        <input type="number" id="qtdCilindros1">
+                        <input type="number" id="qtdCilindros1">
+                        <input type="number" id="qtdCilindros1">
+                        <input type="number" id="qtdCilindros1">
+                        <input type="number" id="qtdCilindros1">
+                        <input type="number" id="qtdCilindros1">
+                        <br>
+
+                        <label for="litragem">Litragem</label>
+                        <input type="number" name="litragem" id="litragem">
+
+                        <div class="resultado">
+                            <button onclick="calcularSuporte()">Calcular</button>
+                            <br>
+                            <input type="number" id="suporte" readonly>
+                        </div>
+                        
+                </div>
+            </div>
+            <!-- #endregion -->
+            
+            <!-- Romaneio -->
+            <!-- #region -->
+            <div class="romaneio " id="romaneio">
+                <form id="envio-romaneio">
+                    <label for="atendente-sehat">Atendente Sehat</label>
+                        <input name="atendenteSehat" id="atendente-sehat" type="text"><br>
+
+                    <label for="atendente-logistica">Atendente Logística</label>
+                        <input name="atendente-logistica" id="atendente-logistica" type="text"><br>
+
+                    <label for="empresas">Empresa</label>
+                        <select name="empresas" id="empresas">
+                            <option value=""></option>
+                            <option value="Lumiar">Lumiar</option>
+                            <option value="SCO">SCO</option>
+                        </select><br>
+
+                    <label for="filiais">Filial</label>
+                        <select name="filiais" id="filiais">
+                            <option value=""></option>
+                            <option value="Guido">Guido</option>
+                            <option value="SCO">SCO</option>
+                            <option value="Rio de Janeiro">Rio de Janeiro</option>
+                            <option value="Campinas">Campinas</option>
+                            <option value="Santos">Santos</option>
+                            <option value="Belo Horizonte">Belo Horizonte</option>
+                            <option value="Recife">Recife</option>
+                        </select><br>
+
+                    <label for="nome-paciente">Nome do Paciente</label>
+                        <input name="nome-paciente" id="nome-paciente" type="text"><br>
+
+                    <label for="plano-atendimento">Plano de Atendimento</label>
+                        <input name="plano-atendimento" id="plano-atendimento" type="text"><br>
+
+                    <label for="data-visita">Data para Visita</label>
+                        <input name="data-visita" id="data-visita" type="date">
+
+                    <label for="hora-entrega">Hora da Entrega</label>
+                        <input name="hora-entrega" id="hora-entrega" type="time"><br>
+
+                    <label for="">Endereço</label><br>
+
+                    <label for="nome-rua">Rua / Av.</label>
+                        <input name="nome-rua" id="nome-rua" type="text"><br>
+
+                    <label for="numero-casa">Número</label>
+                        <input name="numero-casa" id="numero-casa" type="text">
+
+                    <label for="complemento-casa">Complemento</label>
+                        <input name="complemento-casa" id="complemento-casa" type="text"><br>
+
+                    <label for="bairro">Bairro</label>
+                        <input name="bairro" id="bairro" type="text">
+
+                    <label for="cidade">Cidade</label>
+                        <input type="text" name="cidade" id="cidade">
+
+                    <label for="estado">Estado</label>
+                        <select name="estado" id="estado">
+                            <option value=""></option>
+                            <option value="AL">AL</option>
+                            <option value="MG">MG</option>
+                            <option value="PE">PB</option>
+                            <option value="RJ">RJ</option>
+                            <option value="RS">RS</option>
+                            <option value="SP">SP</option>
+                        </select><br>
+
+                    <label for="solicitado-por">Solicitado Por</label>
+                        <input name="solicitado-por" id="solicitado-por" type="text"><br>
+
+                    <label for="plantao">Plantão</label>
+                        <select name="plantao" id="plantao">
+                            <option value="nao">NÃO</option>
+                            <option value="sim">SIM</option>
+                        </select><br>
+
+
+                    <label for="destinatarios">Destinatários</label>
+                        <input name="destinatarios" id="destinatarios" type="text" readonly>
+                    <label for="cc_email" class="hidden" id="lb_cc_email">Com cópia para</label>
+                        <input name="cc_email" id="cc_email" type="text" class="hidden" readonly><br>
+
+                    <label for="equipamentos">Equipamentos</label>
+                        <textarea name="equipamentos" id="equipamentos"></textarea><br>
+
+                    <label for="observacoes">Observações</label>
+                        <textarea name="observacoes" id="observacoes"></textarea><br>
+                    
+
+                    <button type="submit">Enviar Romaneio</button>
+                </form>
+            </div>
+            <!-- #endregion -->
+
+
+            <!--  -->
+
+
+            <!--  -->
+
+
+            <!--  -->
+
+
+
+            
+        </div>
+    </div>
+
+    <script src="script/script.js"></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("service_84d7ck8");
+        })();
+    </script>
+</body>
+</html>
