@@ -50,152 +50,194 @@
 
             <!-- Calculo Suporte -->
             <!-- #region -->
-            <div class="calculo-suporte hidden" id="calculo-suporte">
-                <div id="formula"></div>
-                <div id="calculo">
-                    <h1>Calculo de Suporte de Cilindro</h1>
-                    <label for="qtdCilindros8">Cilindros 8m³</label>
-                        <input type="number" id="qtdCilindros8">
-                        <input type="number" id="qtdCilindros8">
-                        <input type="number" id="qtdCilindros8">
-                        <input type="number" id="qtdCilindros8">
-                        <input type="number" id="qtdCilindros8">
-                        <input type="number" id="qtdCilindros8">
-                        <input type="number" id="qtdCilindros8">
-                        <input type="number" id="qtdCilindros8">
-                        <input type="number" id="qtdCilindros8">
-                        <input type="number" id="qtdCilindros8">
-                        <br>
-                    <label for="qtdCilindros4">Cilindros 4m³</label>
-                        <input type="number" id="qtdCilindros4">
-                        <input type="number" id="qtdCilindros4">
-                        <input type="number" id="qtdCilindros4">
-                        <input type="number" id="qtdCilindros4">
-                        <input type="number" id="qtdCilindros4">
-                        <input type="number" id="qtdCilindros4">
-                        <input type="number" id="qtdCilindros4">
-                        <input type="number" id="qtdCilindros4">
-                        <input type="number" id="qtdCilindros4">
-                        <input type="number" id="qtdCilindros4">
-                        <br>
-                    <label for="qtdCilindros1">Cilindros 1m³</label>
-                        <input type="number" id="qtdCilindros1">
-                        <input type="number" id="qtdCilindros1">
-                        <input type="number" id="qtdCilindros1">
-                        <input type="number" id="qtdCilindros1">
-                        <input type="number" id="qtdCilindros1">
-                        <input type="number" id="qtdCilindros1">
-                        <input type="number" id="qtdCilindros1">
-                        <input type="number" id="qtdCilindros1">
-                        <input type="number" id="qtdCilindros1">
-                        <input type="number" id="qtdCilindros1">
-                        <br>
-
-                        <label for="litragem">Litragem</label>
-                        <input type="number" name="litragem" id="litragem">
-
-                        <div class="resultado">
-                            <button onclick="calcularSuporte()">Calcular</button>
-                            <br>
-                            <input type="number" id="suporte" readonly>
-                        </div>
-                        
-                </div>
+            <div class="calculo-suporte-container " id="calculo-suporte-container">
+                <h1>Calculo de Suporte de Cilindro</h1>  
+                <div class="suporte-content">
+                    <div class="calculo-suporte" id="calculo">    
+                        <table class="tabela-calculo">
+                            <tbody>
+                                <tr>
+                                    <th id="tabCalc-th"><label for="qtdCil8m">Cilindros 8m³</label></td>
+                                    <td id="tabCalc-td"><input id="qtdCil8m" type="number"></td>
+                                    <td id="tabCalc-td"><input id="qtdCil8m" type="number"></td>
+                                    <td id="tabCalc-td"><input id="qtdCil8m" type="number"></td>
+                                    <td id="tabCalc-td"><input id="qtdCil8m" type="number"></td>
+                                    <td id="tabCalc-td"><input id="qtdCil8m" type="number"></td>
+                                </tr>
+                                <tr>
+                                    <th id="tabCalc-th"><label for="qtdCil4m">Cilindros 4m³</label></td>
+                                    <td id="tabCalc-td"><input id="qtdCil4m" type="number"></td>
+                                    <td id="tabCalc-td"><input id="qtdCil4m" type="number"></td>
+                                    <td id="tabCalc-td"><input id="qtdCil4m" type="number"></td>
+                                    <td id="tabCalc-td"><input id="qtdCil4m" type="number"></td>
+                                    <td id="tabCalc-td"><input id="qtdCil4m" type="number"></td>
+                                </tr>
+                                <tr>
+                                    <th id="tabCalc-th"><label for="qtdCil1m">Cilindros 1m³</label></td>
+                                    <td id="tabCalc-td"><input id="qtdCil1m" type="number"></td>
+                                    <td id="tabCalc-td"><input id="qtdCil1m" type="number"></td>
+                                    <td id="tabCalc-td"><input id="qtdCil1m" type="number"></td>
+                                    <td id="tabCalc-td"><input id="qtdCil1m" type="number"></td>
+                                    <td id="tabCalc-td"><input id="qtdCil1m" type="number"></td>
+                                </tr>
+                                <tr>
+                                    <th id="tabCalc-th tc-litragem" colspan="3"><label for="litragem">Litragem</label></th>
+                                    <td id="tc-litragem" colspan="2"><input type="number" name="litragem" id="litragem"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                            <div class="resultado-calculo">
+                                <button id="btn-calcular-suporte" onclick="calcularSuporte()">Calcular</button>
+                                <br>
+                                <input type="text" id="resultado-suporte" readonly>
+                            </div>
+                    </div>
+                    <div class="img_email" id="">
+                        <p>email</p>
+                    </div>   
+                </div>             
+                
             </div>
             <!-- #endregion -->
             
             <!-- Romaneio -->
             <!-- #region -->
-            <div class="romaneio " id="romaneio">
+            <div class="romaneio hidden" id="romaneio">
                 <form id="envio-romaneio">
-                    <label for="atendente-sehat">Atendente Sehat</label>
-                        <input name="atendenteSehat" id="atendente-sehat" type="text"><br>
-
-                    <label for="atendente-logistica">Atendente Logística</label>
-                        <input name="atendente-logistica" id="atendente-logistica" type="text"><br>
-
-                    <label for="empresas">Empresa</label>
-                        <select name="empresas" id="empresas">
-                            <option value=""></option>
-                            <option value="Lumiar">Lumiar</option>
-                            <option value="SCO">SCO</option>
-                        </select><br>
-
-                    <label for="filiais">Filial</label>
-                        <select name="filiais" id="filiais">
-                            <option value=""></option>
-                            <option value="Guido">Guido</option>
-                            <option value="SCO">SCO</option>
-                            <option value="Rio de Janeiro">Rio de Janeiro</option>
-                            <option value="Campinas">Campinas</option>
-                            <option value="Santos">Santos</option>
-                            <option value="Belo Horizonte">Belo Horizonte</option>
-                            <option value="Recife">Recife</option>
-                        </select><br>
-
-                    <label for="nome-paciente">Nome do Paciente</label>
-                        <input name="nome-paciente" id="nome-paciente" type="text"><br>
-
-                    <label for="plano-atendimento">Plano de Atendimento</label>
-                        <input name="plano-atendimento" id="plano-atendimento" type="text"><br>
-
-                    <label for="data-visita">Data para Visita</label>
-                        <input name="data-visita" id="data-visita" type="date">
-
-                    <label for="hora-entrega">Hora da Entrega</label>
-                        <input name="hora-entrega" id="hora-entrega" type="time"><br>
-
-                    <label for="">Endereço</label><br>
-
-                    <label for="nome-rua">Rua / Av.</label>
-                        <input name="nome-rua" id="nome-rua" type="text"><br>
-
-                    <label for="numero-casa">Número</label>
-                        <input name="numero-casa" id="numero-casa" type="text">
-
-                    <label for="complemento-casa">Complemento</label>
-                        <input name="complemento-casa" id="complemento-casa" type="text"><br>
-
-                    <label for="bairro">Bairro</label>
-                        <input name="bairro" id="bairro" type="text">
-
-                    <label for="cidade">Cidade</label>
-                        <input type="text" name="cidade" id="cidade">
-
-                    <label for="estado">Estado</label>
-                        <select name="estado" id="estado">
-                            <option value=""></option>
-                            <option value="AL">AL</option>
-                            <option value="MG">MG</option>
-                            <option value="PE">PB</option>
-                            <option value="RJ">RJ</option>
-                            <option value="RS">RS</option>
-                            <option value="SP">SP</option>
-                        </select><br>
-
-                    <label for="solicitado-por">Solicitado Por</label>
-                        <input name="solicitado-por" id="solicitado-por" type="text"><br>
-
-                    <label for="plantao">Plantão</label>
-                        <select name="plantao" id="plantao">
-                            <option value="nao">NÃO</option>
-                            <option value="sim">SIM</option>
-                        </select><br>
-
-
-                    <label for="destinatarios">Destinatários</label>
-                        <input name="destinatarios" id="destinatarios" type="text" readonly>
-                    <label for="cc_email" class="hidden" id="lb_cc_email">Com cópia para</label>
-                        <input name="cc_email" id="cc_email" type="text" class="hidden" readonly><br>
-
-                    <label for="equipamentos">Equipamentos</label>
-                        <textarea name="equipamentos" id="equipamentos"></textarea><br>
-
-                    <label for="observacoes">Observações</label>
-                        <textarea name="observacoes" id="observacoes"></textarea><br>
-                    
-
-                    <button type="submit">Enviar Romaneio</button>
+                    <table id="tabela-romaneio">
+                        <tbody>
+                            <tr>
+                                <td colspan="4" id="td_title">ATENDIMENTO</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><label for="atendente-sehat">Atendente Sehat</label></td>
+                                <td colspan="2"><input name="atendenteSehat" id="atendente-sehat" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><label for="atendente-logistica">Atendente Logística</label></td>
+                                <td colspan="2"><input name="atendente-logistica" id="atendente-logistica" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" id="td_title">PACIENTE</td>
+                            </tr>
+                            <tr>
+                                <td><label for="empresas">Empresa</label></td>
+                                <td>
+                                    <select name="empresas" id="empresas">
+                                        <option value=""></option>
+                                        <option value="Lumiar">Lumiar</option>
+                                        <option value="SCO">SCO</option>
+                                    </select>
+                                </td>
+                                <td><label for="filiais">Filial</label></td>
+                                <td>
+                                    <select name="filiais" id="filiais">
+                                        <option value=""></option>
+                                        <option value="Guido">Guido</option>
+                                        <option value="SCO">SCO</option>
+                                        <option value="Rio de Janeiro">Rio de Janeiro</option>
+                                        <option value="Campinas">Campinas</option>
+                                        <option value="Santos">Santos</option>
+                                        <option value="Belo Horizonte">Belo Horizonte</option>
+                                        <option value="Recife">Recife</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><label for="nome-paciente">Nome do Paciente</label></td>
+                                <td colspan="2"><input name="nome-paciente" id="nome-paciente" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><label for="plano-atendimento">Plano de Atendimento</label></td>
+                                <td colspan="2"><input name="plano-atendimento" id="plano-atendimento" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td id="td-data-visita"><label for="data-visita">Data para Visita</label></td>
+                                <td><input name="data-visita" id="data-visita" type="date"></td>
+                                <td id="td-hora-entrega"><label for="hora-entrega">Hora da Entrega</label></td>
+                                <td><input name="hora-entrega" id="hora-entrega" type="time"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><label for="servico">Serviço</label></td>
+                                <td colspan="2">
+                                    <select name="servico" id="servico">
+                                        <option value="implantacao">IMPLANTAÇÃO</option>
+                                        <option value="recarga">RECARGA</option>
+                                        <option value="retirada">RETIRADA</option>
+                                        <option value="troca">TROCA</option>
+                                        <option value="venda">VENDA</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" id="td_title"><label>Endereço</label></td>
+                            </tr>
+                            <tr>
+                                <td colspan="1"><label for="nome-rua">Rua / Av.</label></td>
+                                <td colspan="3"><input name="nome-rua" id="nome-rua" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="numero-casa">Número</label></td>
+                                <td><input name="numero-casa" id="numero-casa" type="text"></td>
+                                <td><label for="complemento-casa">Complemento</label></td>
+                                <td><input name="complemento-casa" id="complemento-casa" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="bairro">Bairro</label></td>
+                                <td colspan="3"><input name="bairro" id="bairro" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="cidade">Cidade</label></td>
+                                <td><input type="text" name="cidade" id="cidade"></td>
+                                <td><label for="estado">Estado</label></td>
+                                <td>
+                                    <select name="estado" id="estado">
+                                        <option value=""></option>
+                                        <option value="AL">AL</option>
+                                        <option value="MG">MG</option>
+                                        <option value="PE">PB</option>
+                                        <option value="RJ">RJ</option>
+                                        <option value="RS">RS</option>
+                                        <option value="SP">SP</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label for="solicitado-por">Solicitado Por</label></td>
+                                <td><input name="solicitado-por" id="solicitado-por" type="text"></td>
+                                <td><label for="plantao">Plantão</label></td>
+                                <td>
+                                    <select name="plantao" id="plantao">
+                                        <option value="nao">NÃO</option>
+                                        <option value="sim">SIM</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" id="td_title"><label>Destinatários</label></td>
+                            </tr>
+                            <tr>
+                                <td><label for="destinatarios">Filial</label></td>
+                                <td colspan="3"><input name="destinatarios" id="destinatarios" type="text" readonly></td>
+                            </tr>
+                            <tr class="hidden" id="tr_cc_email">
+                                <td><label for="cc_email" class="hidden" id="lb_cc_email">Com cópia para</label></td>
+                                <td colspan="3"><input name="cc_email" id="cc_email" type="text" class="hidden" readonly></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" id="td_title">INFORMAÇÕES</td>
+                            </tr>
+                            <tr>
+                                <td><label for="equipamentos">Equipamentos</label></td>
+                                <td colspan="3"><textarea name="equipamentos" id="equipamentos" style="resize: none;"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td><label for="observacoes">Observações</label></td>
+                                <td colspan="3"><textarea name="observacoes" id="observacoes" style="resize: none;"></textarea></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button type="submit" class="btn-submit">Enviar Romaneio</button>
                 </form>
             </div>
             <!-- #endregion -->

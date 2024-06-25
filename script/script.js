@@ -5,7 +5,7 @@ function changeInterface(checked){
     switch(parseInt(checked.value)){
         case 1:
             /* Value 1 */
-            /* Value 2 */ document.getElementById('calculo-suporte').classList.add('hidden');
+            /* Value 2 */ document.getElementById('calculo-suporte-container').classList.add('hidden');
             /* Value 3 */ document.getElementById('romaneio').classList.add('hidden');
             /* Value 4 */
             /* Value 5 */
@@ -13,7 +13,7 @@ function changeInterface(checked){
         break;
         case 2:
             /* Value 1 */
-            /* Value 2 */ document.getElementById('calculo-suporte').classList.remove('hidden');
+            /* Value 2 */ document.getElementById('calculo-suporte-container').classList.remove('hidden');
             /* Value 3 */ document.getElementById('romaneio').classList.add('hidden');
             /* Value 4 */
             /* Value 5 */
@@ -21,7 +21,7 @@ function changeInterface(checked){
         break;
         case 3:
             /* Value 1 */
-            /* Value 2 */ document.getElementById('calculo-suporte').classList.add('hidden');
+            /* Value 2 */ document.getElementById('calculo-suporte-container').classList.add('hidden');
             /* Value 3 */ document.getElementById('romaneio').classList.remove('hidden');
             /* Value 4 */
             /* Value 5 */
@@ -29,7 +29,7 @@ function changeInterface(checked){
         break;
         case 4:
             /* Value 1 */
-            /* Value 2 */ document.getElementById('calculo-suporte').classList.add('hidden');
+            /* Value 2 */ document.getElementById('calculo-suporte-container').classList.add('hidden');
             /* Value 3 */ document.getElementById('romaneio').classList.add('hidden');
             /* Value 4 */
             /* Value 5 */
@@ -37,7 +37,7 @@ function changeInterface(checked){
         break;
         case 5:
             /* Value 1 */
-            /* Value 2 */ document.getElementById('calculo-suporte').classList.add('hidden');
+            /* Value 2 */ document.getElementById('calculo-suporte-container').classList.add('hidden');
             /* Value 3 */ document.getElementById('romaneio').classList.add('hidden');
             /* Value 4 */
             /* Value 5 */
@@ -45,7 +45,7 @@ function changeInterface(checked){
         break;
         case 6:
             /* Value 1 */
-            /* Value 2 */ document.getElementById('calculo-suporte').classList.add('hidden');
+            /* Value 2 */ document.getElementById('calculo-suporte-container').classList.add('hidden');
             /* Value 3 */ document.getElementById('romaneio').classList.add('hidden');
             /* Value 4 */
             /* Value 5 */
@@ -61,18 +61,18 @@ function changeInterface(checked){
 function calcularSuporte(){
     var tempoTotal = 0;
     var litragem = document.getElementById('litragem').value;
-    var suporte = document.getElementById('suporte');
+    var suporte = document.getElementById('resultado-suporte');
 
     tempoTotal = validarCilindro8(litragem)+validarCilindro4(litragem)+validarCilindro1(litragem);
 
-    suporte.value = tempoTotal;
+    suporte.value = tempoTotal + ' Hrs';
 }
 
 function validarCilindro8(litragem){
     tempo = 0;
     pressao = 0;
 
-    var fields = document.querySelectorAll('#qtdCilindros8');
+    var fields = document.querySelectorAll('#qtdCil8m');
     fields.forEach((field) => {
         
         var value = parseInt(field.value, 10);
@@ -96,7 +96,7 @@ function validarCilindro4(litragem){
     tempo = 0;
     pressao = 0;
 
-    var fields = document.querySelectorAll('#qtdCilindros4');
+    var fields = document.querySelectorAll('#qtdCil4m');
     fields.forEach((field) => {
         
         var value = parseInt(field.value, 10);
@@ -120,7 +120,7 @@ function validarCilindro1(litragem){
     tempo = 0;
     pressao = 0;
 
-    var fields = document.querySelectorAll('#qtdCilindros1');
+    var fields = document.querySelectorAll('#qtdCil1m');
     fields.forEach((field) => {
         
         var value = parseInt(field.value, 10);
@@ -163,11 +163,13 @@ plantaoSelected.addEventListener('change', function(changed){
     if(document.getElementById('plantao').value=='sim'){
         document.getElementById('cc_email').value = 'ranger.finy@gmail.com';
         document.getElementById('lb_cc_email').classList.remove('hidden');
-        document.getElementById('cc_email').classList.remove('hidden')
+        document.getElementById('cc_email').classList.remove('hidden');
+        document.getElementById('tr_cc_email').classList.remove('hidden');
     }else{
         document.getElementById('cc_email').value = ' ';
         document.getElementById('lb_cc_email').classList.add('hidden');
         document.getElementById('cc_email').classList.add('hidden');
+        document.getElementById('tr_cc_email').classList.add('hidden');
     }
 });
 
@@ -184,6 +186,7 @@ document.getElementById('envio-romaneio').addEventListener('submit', function(ev
         from_plano_atendimento: document.getElementById('plano-atendimento').value,
         from_data_visita: document.getElementById('data-visita').value,
         from_hora_entrega: document.getElementById('hora-entrega').value,
+        from_servico: document.getElementById('servico').value,
         from_nome_rua: document.getElementById('nome-rua').value,
         from_numero_casa: document.getElementById('numero-casa').value,
         from_complemento_casa: document.getElementById('complemento-casa').value,
@@ -206,10 +209,10 @@ document.getElementById('envio-romaneio').addEventListener('submit', function(ev
     if(validacaoDados(templanteParams)){
        emailjs.send(service_ID, template_ID, templanteParams)
         .then(function(response){
-            console.log('SUCCESS', response.status, response.text);
+            //console.log('SUCCESS', response.status, response.text);
             alert('E-mail enviado com sucesso!');
         }, function(error){
-            console.log('FAILED...', error);
+            //console.log('FAILED...', error);
             alert('O envio do e-mail falhou.');
         });     
     }else{
@@ -218,23 +221,27 @@ document.getElementById('envio-romaneio').addEventListener('submit', function(ev
 
 });
 
-function validacaoDados(obj){
+function validacaoDados(myObject){
 
     function removeProperties(obj, properties) {
+        const newObj = {...obj};
         properties.forEach(property => {
-            if (obj.hasOwnProperty(property)) {
-                delete obj[property];
+            if (newObj.hasOwnProperty(property)) {
+                delete newObj[property];
             }
         });
+        return newObj;
     }
 
-    removeProperties(obj, ['from_complemento_casa', 'from_cc_email', 'from_observacoes']);
+    const newObj = removeProperties(myObject, ['from_complemento_casa', 'from_cc_email', 'from_observacoes']);
     
-    if(Object.values(obj).every(value => value !== null && value !== undefined && value !== '')){
+    if(Object.values(newObj).every(value => value !== null && value !== undefined && value !== '')){
         return true;
     }else{
         return false;
-
     }
 }
 //#endregion
+
+/* Envio de Segregação */
+
