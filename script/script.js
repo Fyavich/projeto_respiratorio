@@ -1,71 +1,27 @@
-/* Intercalando Interfaces */
-//#region 
-function changeInterface(checked){
-    
-    switch(parseInt(checked.value)){
-        case 1:
-            /* Value 1 */
-            /* Value 2 */ document.getElementById('calculo-suporte-container').classList.add('hidden');
-            /* Value 3 */ document.getElementById('romaneio').classList.add('hidden');
-            /* Value 4 */
-            /* Value 5 */
-            /* Value 6 */
-        break;
-        case 2:
-            /* Value 1 */
-            /* Value 2 */ document.getElementById('calculo-suporte-container').classList.remove('hidden');
-            /* Value 3 */ document.getElementById('romaneio').classList.add('hidden');
-            /* Value 4 */
-            /* Value 5 */
-            /* Value 6 */
-        break;
-        case 3:
-            /* Value 1 */
-            /* Value 2 */ document.getElementById('calculo-suporte-container').classList.add('hidden');
-            /* Value 3 */ document.getElementById('romaneio').classList.remove('hidden');
-            /* Value 4 */
-            /* Value 5 */
-            /* Value 6 */        
-        break;
-        case 4:
-            /* Value 1 */
-            /* Value 2 */ document.getElementById('calculo-suporte-container').classList.add('hidden');
-            /* Value 3 */ document.getElementById('romaneio').classList.add('hidden');
-            /* Value 4 */
-            /* Value 5 */
-            /* Value 6 */
-        break;
-        case 5:
-            /* Value 1 */
-            /* Value 2 */ document.getElementById('calculo-suporte-container').classList.add('hidden');
-            /* Value 3 */ document.getElementById('romaneio').classList.add('hidden');
-            /* Value 4 */
-            /* Value 5 */
-            /* Value 6 */
-        break;
-        case 6:
-            /* Value 1 */
-            /* Value 2 */ document.getElementById('calculo-suporte-container').classList.add('hidden');
-            /* Value 3 */ document.getElementById('romaneio').classList.add('hidden');
-            /* Value 4 */
-            /* Value 5 */
-            /* Value 6 */
-        break;
-    }
-
-}
-//#endregion
-
 /* Calculo Suporte do Cilindro */
 //#region 
 function calcularSuporte(){
     var tempoTotal = 0;
+    var subTempo = 0;
     var litragem = document.getElementById('litragem').value;
     var suporte = document.getElementById('resultado-suporte');
+    var qtdInalacoes = document.getElementById('qtd-inalacoes').value;
+    var qtdAspiracoes = document.getElementById('qtd-aspiracoes').value;
 
-    tempoTotal = validarCilindro8(litragem)+validarCilindro4(litragem)+validarCilindro1(litragem);
+    if(litragem <= 0){
+        alert("Preencha o Campo Litragem !!!");
+    }else{
+        tempoTotal = Math.floor(validarCilindro8(litragem)+validarCilindro4(litragem)+validarCilindro1(litragem));
+        
+        subTempo = Math.floor((qtdInalacoes/3) + (qtdAspiracoes/3));
 
-    suporte.value = tempoTotal + ' Hrs';
+        if(subTempo >= tempoTotal){
+            suporte.value = 'Sem Suporte !';
+        }else{
+            tempoTotal -= subTempo;
+            suporte.value = tempoTotal + ' Hrs';
+        }
+    }
 }
 
 function validarCilindro8(litragem){
@@ -242,6 +198,3 @@ function validacaoDados(myObject){
     }
 }
 //#endregion
-
-/* Envio de Segregação */
-

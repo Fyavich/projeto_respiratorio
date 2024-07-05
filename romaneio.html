@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intranet</title>
+    <link rel="stylesheet" href="style/romaneio.css">
+    <script type="text/javascript">
+        var public_Key = 'hWEdEleyaDLpe-mBn'; // YOUR_PUBLIC_KEY
+        document.addEventListener("DOMContentLoaded", function() {
+            emailjs.init(public_Key);
+        });
+    </script>
+</head>
+<body>
+    
+    <div class="main-container">
+
+        <!-- Sidebar -->
+        <!-- #region -->
+        <div class="sidebar">
+            <form>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="calculo_cilindrio.html">Calculo Suporte</a></li>
+                    <li><a href="romaneio.html">Romaneio</a></li>
+                    <li><a href="segregacao.html">Segregação</a></label></li>
+                    <li><a href="diretrizes.html">Diretrizes</a></li>
+                    <li><a href="">Rota</a></li>
+                </ul>
+            </form>            
+        </div>
+        <!-- #endregion -->
+
+        <div class="main-content">
+        
+            <!-- Romaneio -->
+            <!-- #region -->
+            <div class="romaneio" id="romaneio">
+                <form id="envio-romaneio">
+                    <table id="tabela-romaneio">
+                        <tbody>
+                            <tr>
+                                <td colspan="4" id="td_title">ATENDIMENTO</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><label for="atendente-sehat">Atendente Sehat</label></td>
+                                <td colspan="2"><input name="atendenteSehat" id="atendente-sehat" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><label for="atendente-logistica">Atendente Logística</label></td>
+                                <td colspan="2"><input name="atendente-logistica" id="atendente-logistica" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" id="td_title">PACIENTE</td>
+                            </tr>
+                            <tr>
+                                <td><label for="empresas">Empresa</label></td>
+                                <td>
+                                    <select name="empresas" id="empresas">
+                                        <option value=""></option>
+                                        <option value="Lumiar">Lumiar</option>
+                                        <option value="SCO">SCO</option>
+                                    </select>
+                                </td>
+                                <td><label for="filiais">Filial</label></td>
+                                <td>
+                                    <select name="filiais" id="filiais">
+                                        <option value=""></option>
+                                        <option value="Guido">Guido</option>
+                                        <option value="SCO">SCO</option>
+                                        <option value="Rio de Janeiro">Rio de Janeiro</option>
+                                        <option value="Campinas">Campinas</option>
+                                        <option value="Santos">Santos</option>
+                                        <option value="Belo Horizonte">Belo Horizonte</option>
+                                        <option value="Recife">Recife</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><label for="nome-paciente">Nome do Paciente</label></td>
+                                <td colspan="2"><input name="nome-paciente" id="nome-paciente" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><label for="plano-atendimento">Plano de Atendimento</label></td>
+                                <td colspan="2"><input name="plano-atendimento" id="plano-atendimento" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td id="td-data-visita"><label for="data-visita">Data para Visita</label></td>
+                                <td><input name="data-visita" id="data-visita" type="date"></td>
+                                <td id="td-hora-entrega"><label for="hora-entrega">Hora da Entrega</label></td>
+                                <td><input name="hora-entrega" id="hora-entrega" type="time"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><label for="servico">Serviço</label></td>
+                                <td colspan="2">
+                                    <select name="servico" id="servico">
+                                        <option value="implantacao">IMPLANTAÇÃO</option>
+                                        <option value="recarga">RECARGA</option>
+                                        <option value="retirada">RETIRADA</option>
+                                        <option value="troca">TROCA</option>
+                                        <option value="venda">VENDA</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" id="td_title">Endereço</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1"><label for="nome-rua">Rua / Av.</label></td>
+                                <td colspan="3"><input name="nome-rua" id="nome-rua" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="numero-casa">Número</label></td>
+                                <td><input name="numero-casa" id="numero-casa" type="text"></td>
+                                <td><label for="complemento-casa">Complemento</label></td>
+                                <td><input name="complemento-casa" id="complemento-casa" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="bairro">Bairro</label></td>
+                                <td colspan="3"><input name="bairro" id="bairro" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="cidade">Cidade</label></td>
+                                <td><input type="text" name="cidade" id="cidade"></td>
+                                <td><label for="estado">Estado</label></td>
+                                <td>
+                                    <select name="estado" id="estado">
+                                        <option value=""></option>
+                                        <option value="AL">AL</option>
+                                        <option value="MG">MG</option>
+                                        <option value="PE">PB</option>
+                                        <option value="RJ">RJ</option>
+                                        <option value="RS">RS</option>
+                                        <option value="SP">SP</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label for="solicitado-por">Solicitado Por</label></td>
+                                <td><input name="solicitado-por" id="solicitado-por" type="text"></td>
+                                <td><label for="plantao">Plantão</label></td>
+                                <td>
+                                    <select name="plantao" id="plantao">
+                                        <option value="nao">NÃO</option>
+                                        <option value="sim">SIM</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" id="td_title">Destinatários</td>
+                            </tr>
+                            <tr>
+                                <td><label for="destinatarios">Filial</label></td>
+                                <td colspan="3"><input name="destinatarios" id="destinatarios" type="text" readonly></td>
+                            </tr>
+                            <tr class="hidden" id="tr_cc_email">
+                                <td><label for="cc_email" class="hidden" id="lb_cc_email">Com cópia para</label></td>
+                                <td colspan="3"><input name="cc_email" id="cc_email" type="text" class="hidden" readonly></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" id="td_title">INFORMAÇÕES</td>
+                            </tr>
+                            <tr>
+                                <td><label for="equipamentos">Equipamentos</label></td>
+                                <td colspan="3"><textarea name="equipamentos" id="equipamentos" style="resize: none;"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td><label for="observacoes">Observações</label></td>
+                                <td colspan="3"><textarea name="observacoes" id="observacoes" style="resize: none;"></textarea></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button type="submit" class="btn-submit">Enviar Romaneio</button>
+                </form>
+            </div>
+            <!-- #endregion -->
+  
+        </div>
+    </div>
+
+    <script src="script/script.js"></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("service_84d7ck8");
+        })();
+    </script>
+</body>
+</html>

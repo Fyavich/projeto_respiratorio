@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intranet</title>
+    <link rel="stylesheet" href="style/segregacao.css">
+    <script type="text/javascript">
+        var public_Key = 'hWEdEleyaDLpe-mBn'; // YOUR_PUBLIC_KEY
+        document.addEventListener("DOMContentLoaded", function() {
+            emailjs.init(public_Key);
+        });
+    </script>
+</head>
+<body>
+    
+    <div class="main-container">
+
+        <!-- Sidebar -->
+        <!-- #region -->
+        <div class="sidebar">
+            <form>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="calculo_cilindrio.html">Calculo Suporte</a></li>
+                    <li><a href="romaneio.html">Romaneio</a></li>
+                    <li><a href="segregacao.html">Segregação</a></label></li>
+                    <li><a href="diretrizes.html">Diretrizes</a></li>
+                    <li><a href="">Rota</a></li>
+                </ul>
+            </form>            
+        </div>
+        <!-- #endregion -->
+
+        <div class="main-content">
+                
+            <!-- Segregação -->
+            <!-- #region -->
+            <div class="segregacao" id="segregacao">
+                <form id="envio-segregacao">
+                    <table id="tabela-segregacao">
+                        <tbody>
+                            <tr>
+                                <td colspan="4" id="td_title">DESTINATÁRIOS</td>
+                            </tr>
+                            <tr>
+                                <td><label for="solicitado-por">Solicitado Por</label></td>
+                                <td><input name="solicitado-por" id="solicitado-por" type="text"></td>
+                                <td><label for="filiais">Filial</label></td>
+                                <td colspan="2">
+                                    <select name="filiais" id="filiais">
+                                        <option value=""></option>
+                                        <option value="Guido">Guido</option>
+                                        <option value="SCO">SCO</option>
+                                        <option value="Rio de Janeiro">Rio de Janeiro</option>
+                                        <option value="Campinas">Campinas</option>
+                                        <option value="Santos">Santos</option>
+                                        <option value="Belo Horizonte">Belo Horizonte</option>
+                                        <option value="Recife">Recife</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label for="destinatarios">Filial</label></td>
+                                <td colspan="3"><input name="destinatarios" id="destinatarios" type="text" readonly></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><label for="aos-cuidados">Aos Cuidados de</label></td>
+                                <td colspan="2">
+                                    <select name="aos-cuidados" id="aos-cuidados">
+                                        <option value="FOX">FOX</option>
+                                        <option value="Assistencia Tecnica">Assistência Técnica</option>
+                                        <option value="Fox & Assistencia Tecnica">FOX & Assistência Técnica</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" id="td_title">INFORMAÇÕES DA SEGREGAÇÃO</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><label for="atendente-sehat">Atendente Sehat</label></td>
+                                <td colspan="2"><input name="atendenteSehat" id="atendente-sehat" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><label for="nome-paciente">Nome do Paciente</label></td>
+                                <td colspan="2"><input name="nome-paciente" id="nome-paciente" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="numero-pedido">Nº Pedido</label></td>
+                                <td><input name="numero-pedido" id="numero-pedido" type="text"></td>
+                                <td id="td-data-visita"><label for="data-visita">Data de Retirada</label></td>
+                                <td><input name="data-visita" id="data-visita" type="date"></td>
+                            </tr>
+                            <tr>
+                            </tr>
+                            <tr>
+                                <td><label for="motivo">Motivo</label></td>
+                                <td colspan="3"><textarea name="motivo" id="motivo" style="resize: none;"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td>Equipamentos</td>
+                                <td colspan="3"><div contenteditable="true" id="equipamentos"></div></td>
+                             </tr>
+                        </tbody>
+                    </table>
+                    <button type="submit" class="btn-submit">Enviar Segregação</button>
+                </form>
+            </div>
+            <!-- #endregion -->
+            
+        </div>
+    </div>
+
+    <script src="script/scriptSegregacao.js"></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("service_84d7ck8");
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intranet</title>
+    <link rel="stylesheet" href="style/calculo.css">
+</head>
+<body>
+    
+    <div class="main-container">
+
+        <!-- Sidebar -->
+        <!-- #region -->
+        <div class="sidebar">
+            <form>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="calculo_cilindrio.html">Calculo Suporte</a></li>
+                    <li><a href="romaneio.html">Romaneio</a></li>
+                    <li><a href="segregacao.html">Segregação</a></label></li>
+                    <li><a href="diretrizes.html">Diretrizes</a></li>
+                    <li><a href="">Rota</a></li>
+                </ul>
+            </form>            
+        </div>
+        <!-- #endregion -->
+
+        <div class="main-content">
+
+            <!-- Calculo Suporte -->
+            <!-- #region -->
+            <div class="calculo-suporte-container " id="calculo-suporte-container">
+                <h1>Calculo de Suporte de Cilindro</h1>  
+                <div class="suporte-content">
+                    <div class="calculo-suporte" id="calculo">    
+                        <table class="tabela-calculo">
+                            <tbody>
+                                <tr>
+                                    <th id="tabCalc-th"><label for="qtdCil8m">Cilindros 8m³</label></td>
+                                    <td id="tabCalc-td"><input id="qtdCil8m" type="number"></td>
+                                    <td id="tabCalc-td"><input id="qtdCil8m" type="number"></td>
+                                    <td id="tabCalc-td"><input id="qtdCil8m" type="number"></td>
+                                    <td id="tabCalc-td"><input id="qtdCil8m" type="number"></td>
+                                    <td id="tabCalc-td"><input id="qtdCil8m" type="number"></td>
+                                </tr>
+                                <tr>
+                                    <th id="tabCalc-th"><label for="qtdCil4m">Cilindros 4m³</label></td>
+                                    <td id="tabCalc-td"><input id="qtdCil4m" type="number"></td>
+                                    <td id="tabCalc-td"><input id="qtdCil4m" type="number"></td>
+                                    <td id="tabCalc-td"><input id="qtdCil4m" type="number"></td>
+                                    <td id="tabCalc-td"><input id="qtdCil4m" type="number"></td>
+                                    <td id="tabCalc-td"><input id="qtdCil4m" type="number"></td>
+                                </tr>
+                                <tr>
+                                    <th id="tabCalc-th"><label for="qtdCil1m">Cilindros 1m³</label></td>
+                                    <td id="tabCalc-td"><input id="qtdCil1m" type="number"></td>
+                                    <td id="tabCalc-td"><input id="qtdCil1m" type="number"></td>
+                                    <td id="tabCalc-td"><input id="qtdCil1m" type="number"></td>
+                                    <td id="tabCalc-td"><input id="qtdCil1m" type="number"></td>
+                                    <td id="tabCalc-td"><input id="qtdCil1m" type="number"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                            <div id="ina-asp">
+                                <label class="txt-lbl">Inalações </label><input id="qtd-inalacoes" type="number">
+                                <label class="txt-lbl">Aspirações </label><input id="qtd-aspiracoes" type="number">
+                            </div>
+                            <div id="container-litragem">
+                                <label for="litragem" class="txt-lbl">Litragem</label>
+                                <input type="number" name="litragem" id="litragem">
+                            </div>
+                            <div class="resultado-calculo">
+                                <button id="btn-calcular-suporte" onclick="calcularSuporte()">Calcular</button>
+                                <br>
+                                <input type="text" id="resultado-suporte" readonly>
+                            </div>
+                    </div>
+                    <div class="img_email" id="">
+                        <p>email</p>
+                    </div>   
+                </div>             
+                
+            </div>
+            <!-- #endregion -->
+                     
+        </div>
+    </div>
+
+    <script src="script/script.js"></script>
+    </script>
+</body>
+</html>
