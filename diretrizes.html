@@ -20,6 +20,7 @@
                     <li><a href="romaneio.html">Romaneio</a></li>
                     <li><a href="segregacao.html">Segregação</a></label></li>
                     <li><a href="diretrizes.html">Diretrizes</a></li>
+                    <li><a href="particularidades.html">Particularidades</a></li>
                     <li><a href="">Rota</a></li>
                 </ul>
             </form>            
@@ -28,13 +29,95 @@
 
         <div class="main-content">
             
-            <label for="filial">
-                <select name="" id="">
-                    <option value="GUIDO">GUIDO</option>
-                    <option value="Rio de Janeiro">Rio de Janeiro</option>
-                    <option value="Maceio">Maceio</option>
-                </select>
-            </label>
+            <div>
+                <label for="filial"> Escolha a filial:
+                    <select name="filial" id="filial">
+                        <option value=" "> </option>
+                        <option value="GUIDO">GUIDO</option>
+                        <option value="Rio de Janeiro">Rio de Janeiro</option>
+                        <option value="Maceio">Maceio</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="table-container">
+                <div class="tabela-comercial">
+                    <table class="tabela">
+                        <thead>
+                            <th><h1>Horario Comercial</h1></th>
+                        </thead>
+                        <tbody>
+                            <tr id="tabela-tr">                            
+                                <td>
+                                    <input type="text" class="input-text input-text-left" value="Comercial HC" readonly>
+                                    <input type="text" class="input-text input-text-center" id="resp-comercialHC-comercial" readonly>
+                                    <input type="text" class="input-text input-text-right" id="tel-resp-comercialHC-comercial" readonly>
+                                </td>
+                            </tr>
+                            <tr id="tabela-tr">                            
+                                <td>
+                                    <input type="text" class="input-text input-text-left" value="Comercial IC" readonly>
+                                    <input type="text" class="input-text input-text-center" id="resp-comercialIC-comercial" readonly>
+                                    <input type="text" class="input-text input-text-right" id="tel-resp-comercialIC-comercial" readonly>
+                                </td>
+                            </tr>
+                            <tr id="tabela-tr">                            
+                                <td>
+                                    <input type="text" class="input-text input-text-left" value="Comercial OP" readonly>
+                                    <input type="text" class="input-text input-text-center" id="resp-comercialOP-comercial" readonly>
+                                    <input type="text" class="input-text input-text-right" id="tel-resp-comercialOP-comercial" readonly>
+                                </td>
+                            </tr>
+                            <tr id="tabela-tr">
+                                <td>
+                                    <input type="text" class="input-text input-text-left" value="Operacional" readonly>
+                                    <input type="text" class="input-text input-text-center" id="resp-operacional-comercial" readonly>
+                                    <input type="text" class="input-text input-text-right" id="tel-resp-operacional-comercial" readonly>
+                                </td>
+                            </tr>
+                            <tr id="tabela-tr">
+                                <td>
+                                    <input type="text" class="input-text input-text-left" value="Milões" readonly>
+                                    <input type="text" class="input-text input-text-center" id="resp-milao-comercial" readonly>
+                                    <input type="text" class="input-text input-text-right" id="tel-resp-milao-comercial" readonly>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="tabela-plantao">
+                    <table class="tabela">
+                        <thead>
+                            <th><h1>Plantão</h1></th>
+                        </thead>
+                        <tbody>
+                            <tr id="tabela-tr">                            
+                                <td>
+                                    <input type="text" class="input-text input-text-left" value="Comercial" readonly>
+                                    <input type="text" class="input-text input-text-center" id="resp-comercial-plantao" readonly>
+                                    <input type="text" class="input-text input-text-right" id="tel-resp-comercial-plantao" readonly>
+                                </td>
+                            </tr>
+                            <tr id="tabela-tr">
+                                <td>
+                                    <input type="text" class="input-text input-text-left" value="Operacional" readonly>
+                                    <input type="text" class="input-text input-text-center" id="resp-operacional-plantao" readonly>
+                                    <input type="text" class="input-text input-text-right" id="tel-resp-operacional-plantao" readonly>
+                                </td>
+                            </tr>
+                            <tr id="tabela-tr">
+                                <td>
+                                    <input type="text" class="input-text input-text-left" value="Milões" readonly>
+                                    <input type="text" class="input-text input-text-center" id="resp-milao-plantao" readonly>
+                                    <input type="text" class="input-text input-text-right" id="tel-resp-milao-plantao" readonly>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
   
         </div>
     </div>

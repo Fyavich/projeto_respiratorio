@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.sidebar {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    padding-top: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #555555;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar ul li a:hover {
+    background-color: #575757;
+}
+
+.hidden-radio input[type="radio"]{
+    display: none;
+}
+
+.main-content {
+    margin-left: 160px; /* Same as the width of the sidebar */
+    padding: 20px;
+}
+
+.hidden{
+    display: none;
+}
+
+
+/* Search Bar */
+.search-bar{
+    text-align: center;
+    width: 100%;
+    border: 1px solid yellow;
+}
+
+.input-bar{
+    align-items: center;
+    margin: auto;
+    width: 100%;
+    border: 1px solid red;
+}
+
+.search-input{
+    width: 70%;
+    padding: 8px;
+    font-size: 18px;
+}
+
+.sugestoes {
+
+    border: 1px solid #ddd;
+    border-top: none;
+    height: fit-content;
+    text-align: center;
+    overflow-y: auto;
+    overflow: 20%;
+    position: relative;
+    width: 70%;
+    background-color: #fff;
+    border: 1px solid green;
+}
+.sugestoes {
+    padding: 10px;
+    cursor: pointer;
+}
+.sugestoes:hover {
+    background-color: #f0f0f0;
+}
+
+.sugestoes:has{
+    display: flex;
+}
+
+
+/* Tabelas */
+table{
+    border: 1px solid black;
+}
+
+#tabela-solicitacoes, #tabela-prazos, #tabela-fisio, #tabela-outros, #tabela-observacoes{
+    display: flex;
+    justify-content: center;
+
+}
+
+#tb-sol, #tb-pra, #tb-fisio, #tb-outros, #tb-obs > td, th{
+    border-collapse: collapse;
+    border: 1px solid black;
+    min-width: 150px;
+}

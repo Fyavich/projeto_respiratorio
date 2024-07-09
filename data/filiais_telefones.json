@@ -1,0 +1,102 @@
+{
+    "GUIDO": {
+        "Horario Comercial": {
+            "Comercial": {
+                "HC": {
+                    "Resp": "Ale Freitas",
+                    "Tel": "(11) 9 9999-9999"
+                },
+                "OP": {
+                    "Resp": "Ale Manni",
+                    "Tel": "(11) 9 8888-8888"
+                },
+                "IC": {
+                    "Resp": "Ale Ale",
+                    "Tel": "(11) 9 7777-7777"
+                }
+            },
+            "Operacional": {
+                "Resp": "Logística",
+                "Tel": "(11) 9 6666-6666"
+            },
+            "Milao":{
+                "Resp": "Bianca",
+                "Tel": "(11) 9 2636-4676"
+            }
+        },
+        "Plantao": {
+            "Comercial": {
+                "HC": {
+                    "Resp": "Karina Karina",
+                    "Tel": "(11) 9 5555-5555"
+                },
+                "OP": {
+                    "Resp": "Melyssa Melyssa",
+                    "Tel": "(11) 9 4444-4444"
+                },
+                "IC": {
+                    "Resp": "Claudenice",
+                    "Tel": "(11) 9 3333-3333"
+                }
+            },
+            "Operacional": {
+                "Resp": "Logística 2",
+                "Tel": "(11) 9 2222-2222"
+            },
+            "Milao":{
+                "Resp": "Bianca",
+                "Tel": "(11) 9 2636-4676"
+            }
+        }
+    },
+    "Rio de Janeiro": {
+        "Horario Comercial": {
+            "Comercial": {
+                "HC": {
+                    "Resp": "Fabio",
+                    "Tel": "(21) 9 9879-9456"
+                },
+                "OP": {
+                    "Resp": "Pablo",
+                    "Tel": "(21) 9 3214-4567"
+                },
+                "IC": {
+                    "Resp": "Adriano",
+                    "Tel": "(21) 9 8534-7642"
+                }
+            },
+            "Operacional": {
+                "Resp": "Leonard",
+                "Tel": "(21) 9 1122-3344"
+            },
+            "Milao":{
+                "Resp": "Bianca",
+                "Tel": "(11) 9 2636-4676"
+            }
+        },
+        "Plantao": {
+            "Comercial": {
+                "HC": {
+                    "Resp": "Thamara",
+                    "Tel": "(21) 9 9988-7997"
+                },
+                "OP": {
+                    "Resp": "Zanetti",
+                    "Tel": "(21) 9 4646-7979"
+                },
+                "IC": {
+                    "Resp": "Lidiane",
+                    "Tel": "(21) 9 8787-9898"
+                }
+            },
+            "Operacional": {
+                "Resp": "Francisco",
+                "Tel": "(21) 9 1012-3032"
+            },
+            "Milao":{
+                "Resp": "Bianca",
+                "Tel": "(11) 9 2636-4676"
+            }
+        }
+    }
+}

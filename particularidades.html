@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intranet</title>
+    <link rel="stylesheet" href="style/particularidades.css">
+</head>
+<body>
+    
+    <div class="main-container">
+
+        <!-- Sidebar -->
+        <!-- #region -->
+        <div class="sidebar">
+            <form>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="calculo_cilindrio.html">Calculo Suporte</a></li>
+                    <li><a href="romaneio.html">Romaneio</a></li>
+                    <li><a href="segregacao.html">Segregação</a></label></li>
+                    <li><a href="diretrizes.html">Diretrizes</a></li>
+                    <li><a href="particularidades.html">Particularidades</a></li>
+                    <li><a href="">Rota</a></li>
+                </ul>
+            </form>            
+        </div>
+        <!-- #endregion -->
+
+        <div class="main-content">
+
+            <div class="search-bar">
+                <div class="input-bar">
+                    <input type="text" class="search-input" id="search" placeholder="Plano...">
+                    <div class="sugestoes" id="sugestoes"></div>
+                </div>
+            </div>
+            
+            <div class="table-container">
+                <div id="tabela-solicitacoes">
+                    <table id="tb-sol">
+                        <tbody>
+                            <tr>
+                                <th> - </th>
+                                <th>Horário Comercial</th>
+                                <th>Plantão</th>
+                            </tr>
+                            <tr>
+                                <th>Solicitações</th>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+    
+                <div id="tabela-prazos">
+                    <table id="tb-pra">
+                        <tbody>
+                            <tr>
+                                <th> - </th>
+                                <th>Prazo de Atendimento</th>
+                            </tr>
+                            <tr>
+                                <th>Implantação</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>Urgência</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>Troca</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>Recarga</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>Descartáveis</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>Retirada</th>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div id="tabela-fisio">
+                    <table id="tb-fisio">
+                        <tbody>
+                            <tr>
+                                <th> </th>
+                                <th colspan="2">Horário Comercial</th>
+                                <th colspan="2">Plantão</th>
+                            </tr>
+                            <tr>
+                                <th> </th>
+                                <th>Implantção</th>
+                                <th>Troca</th>
+                                <th>Implantção</th>
+                                <th>Troca</th>
+                            </tr>
+                            <tr>
+                                <th>Acionar Fisioterapeuta</th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+    
+                <div id="tabela-outros">
+                    <table id="tb-outros">
+                        <tbody>
+                            <tr>
+                                <th>Data</th>
+                                <th>Filial</th>
+                                <th>Segmento</th>
+                                <th>Código Callisto</th>
+                                <th>Faturamento por Empenho</th>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+    
+                <div id="tabela-observacoes">
+                    <table id="tb-obs">
+                        <tbody>
+                            <tr>
+                                <th>Observações</th>
+                            </tr>
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+  
+        </div>
+    </div>
+
+    <script src="script/particularidades.js"></script>
+</body>
+</html>

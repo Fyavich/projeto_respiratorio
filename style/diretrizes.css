@@ -47,3 +47,66 @@ body {
     display: none;
 }
 
+.table-container{
+    display: flex;
+    width: 100%;
+}
+
+.tabela{
+    border-collapse: collapse;
+}
+
+#tabela-tr{
+    height: 40px;
+}
+
+.tabela-comercial{
+    border: 1px solid black;
+}
+
+.tabela-plantao{
+    border: 1px solid black;
+}
+
+.tabela-comercial, .tabela-plantao{
+    display: flex;
+    width: 50%;
+    min-width: 450px;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+input[type="text"]{
+    margin: -4px;
+    height: 26px;
+    outline: none;
+}
+
+.input-text{
+    width: 150px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+}
+
+.input-text-left{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-right: 0;
+    background-color: #ecf0f3;
+}
+
+.input-text-center{
+    border-left: 0;
+    border-right: 0;
+}
+
+.input-text-right{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-left: 0;
+    background-color: #ecf0f3;
+}
+
