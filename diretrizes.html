@@ -29,8 +29,8 @@
 
         <div class="main-content">
             
-            <div>
-                <label for="filial"> Escolha a filial:
+            <div class="select-input">
+                <label for="filial" id="selector"> Escolha a filial:
                     <select name="filial" id="filial">
                         <option value=" "> </option>
                         <option value="GUIDO">GUIDO</option>
@@ -94,9 +94,23 @@
                         <tbody>
                             <tr id="tabela-tr">                            
                                 <td>
-                                    <input type="text" class="input-text input-text-left" value="Comercial" readonly>
-                                    <input type="text" class="input-text input-text-center" id="resp-comercial-plantao" readonly>
-                                    <input type="text" class="input-text input-text-right" id="tel-resp-comercial-plantao" readonly>
+                                    <input type="text" class="input-text input-text-left" value="Comercial HC" readonly>
+                                    <input type="text" class="input-text input-text-center" id="resp-comercial-hc-plantao" readonly>
+                                    <input type="text" class="input-text input-text-right" id="tel-resp-comercial-hc-plantao" readonly>
+                                </td>
+                            </tr>
+                            <tr id="tabela-tr">
+                                <td>
+                                    <input type="text" class="input-text input-text-left" value="Comercial IC" readonly>
+                                    <input type="text" class="input-text input-text-center" id="resp-comercial-ic-plantao" readonly>
+                                    <input type="text" class="input-text input-text-right" id="tel-resp-comercial-ic-plantao" readonly>
+                                </td>
+                            </tr>
+                            <tr id="tabela-tr">
+                                <td>
+                                    <input type="text" class="input-text input-text-left" value="Comercial OP" readonly>
+                                    <input type="text" class="input-text input-text-center" id="resp-comercial-op-plantao" readonly>
+                                    <input type="text" class="input-text input-text-right" id="tel-resp-comercial-op-plantao" readonly>
                                 </td>
                             </tr>
                             <tr id="tabela-tr">
@@ -117,6 +131,12 @@
                     </table>
 
                 </div>
+            </div>
+
+            <div class="mural">
+                <h1>Mural de Informações</h1>
+                <button onclick="CriarNovoPost()">Novo</button>
+                <div id="mural-painel"></div>
             </div>
   
         </div>

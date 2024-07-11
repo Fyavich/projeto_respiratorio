@@ -97,6 +97,7 @@ table{
     display: flex;
     justify-content: center;
     font-size: 14px;
+    margin: 10px;
 }
 
 #tb-sol, #tb-pra, #tb-fisio, #tb-outros, #tb-obs > td, th{
@@ -113,3 +114,25 @@ td{
 #sol-hc, #sol-plan{
     min-width: 250px;
 }
+
+#td-obs{
+    border: none;
+    text-align: center;
+    min-width: 500px;
+    height: 150px;
+    margin: 0;
+    padding: 2px;
+}
+
+#observacoes{
+    width: 98%;
+    height: 100%;
+    border: none;
+    resize: none;
+    outline: none;
+}
+
+#fisio-imp-HC, #fisio-troca-HC, #fisio-imp-PLAN, #fisio-troca-PLAN, #pa_seg{
+    min-width: 200px;
+}
+
